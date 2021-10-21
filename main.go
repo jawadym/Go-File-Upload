@@ -30,6 +30,9 @@ func temporaryServe(w http.ResponseWriter, r *http.Request) {
 }
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
+	// enabling cors
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	fmt.Fprintf(w, "Uploading File")
 
 	// parse input of type multipart/form-data
